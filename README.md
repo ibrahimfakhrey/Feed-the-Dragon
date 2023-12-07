@@ -1,9 +1,9 @@
 <h1 align="center">Hi 👋, I'm ÷Ibrahim fakhry</h1>
 <h3 align="center">A passionate developer from Egypt</h3>
 
-- 🔭 I’m currently working on [Web Development](https://www.youtube.com/channel/UCHUZS2VgprpnN1dtLqb6ABA)
+- 🔭 I’m currently working on [Web Development]
 
-- 👨‍💻 All of my projects are available at [https://github.com/dheerajrao20/](https://github.com/dheerajrao20/)
+
 # Feed the Dragon
 A Simple game made by using Pygame 
 
