@@ -3,19 +3,20 @@ import random
 
 pygame.init()
 
-GAME_FOLDER = 'C:/Users/91870/OneDrive/Desktop/Feed-the-Dragon/'
-WINDOW_WIDTH = 1500
+GAME_FOLDER = '/Users/ibrahimfakhry/PycharmProjects/Feed-the-Dragon/'
+WINDOW_WIDTH = 1000
+
 WINDOW_HEIGHT = 750
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption('Feed the Dragon')
+pygame.display.set_caption('Feed the dragon')
 background_image = pygame.transform.scale(pygame.image.load(GAME_FOLDER + 
-'dragon_night.jpg'), (WINDOW_WIDTH, WINDOW_HEIGHT))
+"dragon_night.jpg"), (WINDOW_WIDTH, WINDOW_HEIGHT))
 #game dragon
 dragon = pygame.image.load(GAME_FOLDER + 'dragon.png')
 dragon_rect = dragon.get_rect()
 dragon_rect.right = WINDOW_WIDTH - 10
 dragon_rect.centery = WINDOW_HEIGHT//2
-dragon_velocity = 5
+dragon_velocity = 17
 
 # coin animation
 coins = []
@@ -28,10 +29,11 @@ coin_rect.left = 0
 coin_rect.top = 400
 coin_velocity = 5
 
+
 #game sounds
-loss = pygame.mixer.Sound(GAME_FOLDER + 'loss.wav')
+loss = pygame.mixer.Sound(GAME_FOLDER + '1.mp3')
 loss.set_volume(0.5)
-pick = pygame.mixer.Sound(GAME_FOLDER + 'pickup.wav')
+pick = pygame.mixer.Sound(GAME_FOLDER + '2.mp3')
 pick.set_volume(0.5)
 background_music = pygame.mixer.music.load(GAME_FOLDER + 'background_music.mp3')
 pygame.mixer.music.set_volume(0.5)
@@ -43,19 +45,19 @@ small_game_font = pygame.font.Font(GAME_FOLDER + 'AttackGraffiti.ttf', 40)
 
 #load game colors
 
-GREEN = pygame.Color(0, 200, 0)
+GREEN = pygame.Color(0, 255, 100)
 RED = pygame.Color(255, 0, 0)
 WHITE = pygame.Color(255, 255, 255)
 
 #render the text using above fonts and colors
 
-title = big_game_font.render('Feed the Dragon', True, GREEN)
+title = big_game_font.render('ahmed amd mostafa and ayham ', True, GREEN)
 title_rect = title.get_rect()
 title_rect.centerx = WINDOW_WIDTH//2
 title_rect.top = 10
 
 #player score
-player_score = 0
+player_score = 1500
 score = small_game_font.render('Score:' + str(player_score), True, WHITE)
 score_rect = score.get_rect()
 score_rect.left = 50
@@ -84,14 +86,16 @@ game_quit_text_rect = game_quit_text.get_rect()
 game_quit_text_rect.center = (WINDOW_WIDTH//2, WINDOW_HEIGHT//2 + 100)
 
 
-
 game_status=1
-FPS = 60
+FPS = 288
 clock = pygame.time.Clock()
 running = True
 while running:
 
     for ev in pygame.event.get():
+
+
+
         if ev.type == pygame.QUIT:
             running = False
         if ev.type == pygame.KEYDOWN:
@@ -104,7 +108,7 @@ while running:
                 coin_index = 0
                 coin_rect.left = 0
                 coin_rect.top = 400
-                coin_velocity = 5
+                coin_velocity = 500
                 dragon_rect.centery = WINDOW_HEIGHT // 2
                 score = small_game_font.render('Score: ' + str(player_score), True, WHITE)
                 lives = small_game_font.render('Lives: ' + str(player_lives), True, WHITE)
